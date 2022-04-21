@@ -1,5 +1,5 @@
 # JS-Calculator
 
 Simple calculator.
-My first litle project on JavaScript. 
-Also first my experience on CSS.
+My first little project on JavaScript. 
+Also my first experience on CSS.
