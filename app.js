@@ -24,14 +24,14 @@ function buttonClicked(id) {
             redrawDisplay()
         }
     } else if(['*','/','+','-'].includes(id)) {
-        operand2 = eval(operand1 + operatorLast + operand2) //Rewrite IT!!! Withput Eval()
+        operand2 = evalOperation(operand1, operatorLast, operand2) //Rewrite IT!!! Withput Eval()
         redrawDisplay()
         operatorLast = id
         operand1 = operand2
         operand2 = '0'
         
     } else if(id == '=') {
-        operand2 = eval(operand1 + operatorLast + operand2) //Rewrite IT!!! Withput Eval()
+        operand2 = evalOperation(operand1, operatorLast, operand2) //Rewrite IT!!! Withput Eval()
         redrawDisplay()
         operand1 = '0'
         operand2 = '0'
@@ -46,4 +46,18 @@ function buttonClicked(id) {
 
 function redrawDisplay() {
     out.textContent = operand2
+}
+
+function evalOperation (oper1, action, oper2) {
+  if (action == '+') {
+    return parseFloat(oper1) + parseFloat(oper2)
+  }else if (action == '-') {
+    return oper1 - oper2
+  }else if (action == '*') {
+    return oper1 * oper2
+  }else if (action == '/') {
+    return oper1 / oper2
+  }else {
+    return 'Alarma!!!'
+  }       
 }
